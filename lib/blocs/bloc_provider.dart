@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:otake_flutter_home/blocs/bloc_base.dart';
 
 class BlocProvider<T> extends InheritedWidget {
   final T bloc;
