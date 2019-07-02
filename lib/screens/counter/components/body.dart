@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
             'You have pushed the button this many times:',
           ),
           StreamBuilder(
-            stream: evenBloc.counter$,
+            stream: evenBloc.currentValue$,
             builder: (BuildContext context, AsyncSnapshot snapshot) => Text(
                   '${snapshot.data}',
                   style: Theme.of(context).textTheme.display1,

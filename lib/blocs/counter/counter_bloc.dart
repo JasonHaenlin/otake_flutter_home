@@ -4,7 +4,7 @@ class CounterBloc {
   CounterState _counter;
 
   CounterBloc() {
-    _counter = CounterState();
+    _counter = CounterState(0);
   }
 
   CounterState get counterBloc => _counter;

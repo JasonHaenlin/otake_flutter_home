@@ -1,14 +1,34 @@
+import 'dart:async';
+
+import 'package:rxdart/rxdart.dart';
+
 abstract class BlocBase<Event, Type> {
   Event _currentEvent;
 
-  void dispose();
+  BehaviorSubject<Type> _currentValue$;
+  Type _currentValue;
 
-  void dispatch(Event event) {
-    _currentEvent = event;
-    eventToState(event);
+  Stream<Type> get currentValue$ => _currentValue$.stream;
+  Type get currentValue => _currentValue;
+  Event get currentEvent => _currentEvent;
+
+  BlocBase(Type seed) {
+    _currentValue$ = BehaviorSubject<Type>(seedValue: seed);
+    _currentValue = seed;
   }
 
-  void eventToState(Event event);
+  void dispose() {
+    _currentValue$.close();
+  }
 
-  Event get currentEvent => _currentEvent;
+  void dispatch(Event event) async {
+    _currentEvent = event;
+    dynamic stream = eventToState(event);
+    await for (dynamic value in stream) {
+      _currentValue$.add(value);
+      _currentValue = value;
+    }
+  }
+
+  Stream<Type> eventToState(Event event);
 }
