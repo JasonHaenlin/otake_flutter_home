@@ -17,6 +17,7 @@ class FloatingActBtn extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
+            heroTag: 'incFlBtn',
             onPressed: () => evenBloc.dispatch(CounterEvent.increment),
             tooltip: 'Increment',
             child: Icon(Icons.add),
@@ -25,6 +26,7 @@ class FloatingActBtn extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
+            heroTag: 'decFlBtn',
             onPressed: () => evenBloc.dispatch(CounterEvent.decrement),
             tooltip: 'Decrement',
             child: Icon(Icons.remove),

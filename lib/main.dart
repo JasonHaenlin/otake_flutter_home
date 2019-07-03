@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/screens/counter/counter.dart';
+import 'package:otake_flutter_home/theme/style.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,9 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: appTheme(),
       home: Counter(),
     );
   }
