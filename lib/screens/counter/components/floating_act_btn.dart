@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/counter/counter_bloc.dart';
-import 'package:otake_flutter_home/blocs/counter/counter_event.dart';
+import 'package:otake_flutter_home/blocs/counter/counter_state.dart';
 
 class FloatingActBtn extends StatelessWidget {
   const FloatingActBtn({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final evenBloc = BlocProvider.of<CounterBloc>(context).counterBloc;
+    final _evenBloc = BlocProvider.of<CounterBloc>(context).counterBloc;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -18,7 +18,7 @@ class FloatingActBtn extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
             heroTag: 'incFlBtn',
-            onPressed: () => evenBloc.dispatch(CounterEvent.increment),
+            onPressed: () => _evenBloc.dispatch(CounterEvent.increment),
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
@@ -27,7 +27,7 @@ class FloatingActBtn extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: FloatingActionButton(
             heroTag: 'decFlBtn',
-            onPressed: () => evenBloc.dispatch(CounterEvent.decrement),
+            onPressed: () => _evenBloc.dispatch(CounterEvent.decrement),
             tooltip: 'Decrement',
             child: Icon(Icons.remove),
           ),

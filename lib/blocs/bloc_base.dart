@@ -12,9 +12,12 @@ abstract class BlocBase<Event, Type> {
   Type get currentValue => _currentValue;
   Event get currentEvent => _currentEvent;
 
-  BlocBase(Type seed) {
-    _currentValue$ = BehaviorSubject<Type>(seedValue: seed);
+  BlocBase({Type seed, Event initEvent}) {
+    _currentValue$ = BehaviorSubject(seedValue: seed);
     _currentValue = seed;
+    if (initEvent != null) {
+      dispatch(initEvent);
+    }
   }
 
   void dispose() {

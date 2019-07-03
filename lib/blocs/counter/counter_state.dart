@@ -5,7 +5,7 @@ import 'package:otake_flutter_home/blocs/bloc_base.dart';
 enum CounterEvent { increment, decrement }
 
 class CounterState extends BlocBase<CounterEvent, int> {
-  CounterState(int seed) : super(seed);
+  CounterState(int seed) : super(seed: seed);
 
   @override
   Stream<int> eventToState(CounterEvent event) async* {

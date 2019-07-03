@@ -19,7 +19,7 @@ class Counter extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.navigate_next),
-                onPressed: () => Navigate.to(context, ListDemo()))
+                onPressed: () => navigateToPage(context, ListDemo()))
           ],
         ),
         body: Body(),
