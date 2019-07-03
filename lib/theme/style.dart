@@ -11,9 +11,9 @@ ThemeData appTheme() {
     dividerColor: Colors.white,
     buttonColor: Colors.white,
     scaffoldBackgroundColor: Colors.white,
-    canvasColor: Colors.black,
+    canvasColor: Colors.white,
 
-    appBarTheme: AppBarTheme(color: Colors.cyan[300]),
+    appBarTheme: AppBarTheme(color: Colors.cyan[600]),
 
     iconTheme: IconThemeData(color: Colors.white),
     primaryIconTheme: IconThemeData(color: Colors.white),
