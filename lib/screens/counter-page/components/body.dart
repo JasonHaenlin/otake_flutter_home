@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/counter/counter_bloc.dart';
-import 'package:otake_flutter_home/screens/counter/components/floating_act_btn.dart';
+import 'package:otake_flutter_home/screens/counter-page/components/floating_act_btn.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final evenBloc = BlocProvider.of<CounterBloc>(context).counterBloc;
+    final _evenBloc = BlocProvider.of<CounterBloc>(context).counterBloc;
     return Stack(
       children: <Widget>[
         Center(
@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
               ),
               Center(
                   child: StreamBuilder(
-                stream: evenBloc.currentValue$,
+                stream: _evenBloc.currentValue$,
                 builder: (BuildContext context, AsyncSnapshot snapshot) => Text(
                       '${snapshot.data}',
                       style: Theme.of(context).textTheme.display1,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/entry/entry_bloc.dart';
 import 'package:otake_flutter_home/models/entry_model.dart';
-import 'package:otake_flutter_home/screens/list/components/entry_card.dart';
+import 'package:otake_flutter_home/screens/list-page/components/entry_card.dart';
 import 'package:otake_flutter_home/theme/colors.dart';
 
 class Body extends StatelessWidget {
@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
       stream: eventBloc.currentValue$,
       builder: (BuildContext context, AsyncSnapshot<List<Entry>> snapshot) =>
           snapshot.hasData
-              ? (new ListViewDemo(data: snapshot.data))
+              ? (ListViewDemo(data: snapshot.data))
               : Center(child: CircularProgressIndicator()),
     );
   }

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/counter/counter_bloc.dart';
 import 'package:otake_flutter_home/components/backdrop.dart';
-import 'package:otake_flutter_home/screens/counter/components/body.dart';
-import 'package:otake_flutter_home/screens/counter/components/menu.dart';
+import 'package:otake_flutter_home/screens/counter-page/components/body.dart';
+import 'package:otake_flutter_home/screens/counter-page/components/menu.dart';
 
 class Counter extends StatelessWidget {
   const Counter({Key key}) : super(key: key);

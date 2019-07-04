@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/entry/entry_bloc.dart';
-import 'package:otake_flutter_home/screens/list/components/body.dart';
+import 'package:otake_flutter_home/screens/list-page/components/body.dart';
 
 class ListDemo extends StatelessWidget {
   const ListDemo({Key key}) : super(key: key);

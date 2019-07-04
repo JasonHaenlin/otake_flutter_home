@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/core/router.dart';
-import 'package:otake_flutter_home/screens/list/list.dart';
+import 'package:otake_flutter_home/screens/list-page/list.dart';
 
 class Menu extends StatelessWidget {
   const Menu({
