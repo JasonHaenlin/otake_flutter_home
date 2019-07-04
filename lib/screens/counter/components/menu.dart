@@ -13,10 +13,13 @@ class Menu extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(height: 32.0),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child:
-                  Text('menu 1', style: Theme.of(context).textTheme.display2),
+            GestureDetector(
+              onTap: () => print('hey'),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child:
+                    Text('menu 1', style: Theme.of(context).textTheme.display2),
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
