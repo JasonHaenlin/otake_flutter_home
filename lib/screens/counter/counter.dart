@@ -4,6 +4,7 @@ import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/counter/counter_bloc.dart';
 import 'package:otake_flutter_home/components/backdrop.dart';
 import 'package:otake_flutter_home/screens/counter/components/body.dart';
+import 'package:otake_flutter_home/screens/counter/components/menu.dart';
 
 class Counter extends StatelessWidget {
   const Counter({Key key}) : super(key: key);
@@ -14,22 +15,10 @@ class Counter extends StatelessWidget {
       bloc: CounterBloc(),
       child: Backdrop(
         frontLayer: Body(),
-        backLayer: Container(color: Colors.cyan[600]),
+        backLayer: Menu(),
         frontTitle: Text('Counter Demo'),
         backTitle: Text('Menu'),
       ),
-      // child: Scaffold(
-      //   appBar: AppBar(
-      //     title: Text('Counter Demo'),
-      //     actions: <Widget>[
-      //       IconButton(
-      //           icon: Icon(Icons.navigate_next),
-      //           onPressed: () => navigateToPage(context, ListDemo()))
-      //     ],
-      //   ),
-      //   body: Body(),
-      //   floatingActionButton: FloatingActBtn(),
-      // ),
     );
   }
 }
