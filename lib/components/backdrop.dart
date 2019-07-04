@@ -119,7 +119,6 @@ class _FrontLayer extends StatelessWidget {
         borderRadius: BorderRadius.only(topLeft: Radius.circular(58.0)),
       ),
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(child: child),
         ],
