@@ -42,8 +42,8 @@ Color colorMonocromatic(index, color) {
       return Colors.deepPurple[shade(index)];
       break;
     default:
-      return Colors.purple[shade(index)];
+      return Colors.grey[shade(index)];
   }
 }
 
-num shade(index) => 100 * ((index % 3) + 2);
+num shade(index) => 100 * ((index % 4) + 2);

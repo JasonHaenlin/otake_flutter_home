@@ -23,9 +23,11 @@ ThemeData appTheme() {
 
     // Define the default TextTheme. Use this to specify the default
     textTheme: TextTheme(
-      headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      headline: TextStyle(fontSize: 38.0, fontWeight: FontWeight.bold),
       display1: TextStyle(fontSize: 42.0),
       display2: TextStyle(fontSize: 32.0),
+      display3: TextStyle(fontSize: 22.0),
+      display4: TextStyle(fontSize: 18.0),
       title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       body1: TextStyle(fontSize: 14.0),
     ),

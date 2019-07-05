@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/core/router.dart';
-import 'package:otake_flutter_home/screens/list-page/list.dart';
+import 'package:otake_flutter_home/screens/unit-page/unit_page.dart';
 
 class Menu extends StatelessWidget {
   const Menu({
@@ -16,7 +16,7 @@ class Menu extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 32.0),
             GestureDetector(
-              onTap: () => navigateToPage(context, ListDemo()),
+              onTap: () => navigateToPage(context, UnitPage()),
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child:

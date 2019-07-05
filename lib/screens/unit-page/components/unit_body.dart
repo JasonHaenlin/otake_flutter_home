@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/entry/entry_bloc.dart';
 import 'package:otake_flutter_home/models/unit_model.dart';
-import 'package:otake_flutter_home/screens/list-page/components/unit_card.dart';
+import 'package:otake_flutter_home/screens/unit-page/components/unit_card.dart';
 import 'package:otake_flutter_home/theme/colors.dart';
-import 'package:otake_flutter_home/theme/colors.dart' as prefix0;
 
-class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+class UnitBody extends StatelessWidget {
+  const UnitBody({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class Body extends StatelessWidget {
       stream: eventBloc.currentValue$,
       builder: (BuildContext context, AsyncSnapshot<List<Unit>> snapshot) =>
           snapshot.hasData
-              ? (ListViewDemo(data: snapshot.data))
+              ? ListViewDemo(data: snapshot.data)
               : Center(child: CircularProgressIndicator()),
     );
   }
@@ -33,15 +32,19 @@ class ListViewDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: List.generate(data.length, (index) {
-        return Container(
-          height: 100.0,
-          color: prefix0.colorMonocromatic(index, 'deepPurple'),
-          child: UnitCard(data: data[index]),
+    return OrientationBuilder(
+      builder: (context, orientation) {
+        return GridView.count(
+          crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+          children: List.generate(data.length, (index) {
+            return Container(
+              height: 100.0,
+              color: colorMonocromatic(index, 'cyan'),
+              child: UnitCard(data: data[index]),
+            );
+          }),
         );
-      }),
+      },
     );
   }
 }
