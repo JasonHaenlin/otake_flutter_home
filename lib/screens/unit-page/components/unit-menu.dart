@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:otake_flutter_home/core/router.dart';
-import 'package:otake_flutter_home/screens/unit-page/unit_page.dart';
 
-class Menu extends StatelessWidget {
-  const Menu({
+class UnitMenu extends StatelessWidget {
+  const UnitMenu({
     Key key,
   }) : super(key: key);
 
@@ -15,8 +13,8 @@ class Menu extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(height: 32.0),
-            GestureDetector(
-              onTap: () => navigateToPage(context, UnitPage()),
+            InkWell(
+              onTap: () => print('menu 1 tapped'),
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child:

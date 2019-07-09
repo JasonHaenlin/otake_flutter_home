@@ -12,12 +12,18 @@ class UnitCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => navigateToPage(context, UnitDetailPage(data)),
-      child: Column(
-        children: <Widget>[
-          UnitInfo(data: data),
-          UnitName(data: data),
-          ZoomIcon()
-        ],
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return constraints.maxWidth > 150.0
+              ? Column(
+                  children: <Widget>[
+                    UnitInfo(data: data),
+                    UnitName(data: data),
+                    ZoomIcon()
+                  ],
+                )
+              : Container();
+        },
       ),
     );
   }

@@ -16,16 +16,16 @@ class UnitBody extends StatelessWidget {
       stream: eventBloc.currentValue$,
       builder: (BuildContext context, AsyncSnapshot<List<Unit>> snapshot) =>
           snapshot.hasData
-              ? ListViewDemo(data: snapshot.data)
+              ? ListViewUnits(data: snapshot.data)
               : Center(child: CircularProgressIndicator()),
     );
   }
 }
 
-class ListViewDemo extends StatelessWidget {
+class ListViewUnits extends StatelessWidget {
   final List<Unit> data;
 
-  const ListViewDemo({
+  const ListViewUnits({
     @required this.data,
     Key key,
   }) : super(key: key);
