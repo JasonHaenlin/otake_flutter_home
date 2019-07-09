@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otake_flutter_home/components/IconGradient.dart';
 
 const double _kFlingVelocity = 2.0;
 
@@ -88,7 +89,6 @@ class _BackdropState extends State<Backdrop>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        brightness: Brightness.light,
         elevation: 0.0,
         titleSpacing: 0.0,
         title: _BackdropTitle(
@@ -115,8 +115,11 @@ class _FrontLayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 16.0,
-      shape: BeveledRectangleBorder(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(58.0)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
+        ),
       ),
       child: Column(
         children: <Widget>[
@@ -147,23 +150,25 @@ class _BackdropTitle extends AnimatedWidget {
     final Animation<double> animation = this.listenable;
 
     return DefaultTextStyle(
-      style: Theme.of(context).primaryTextTheme.title,
+      style: Theme.of(context).appBarTheme.textTheme.title,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
       child: Row(children: <Widget>[
         SizedBox(
-          width: 72.0,
+          width: 80.0,
           child: IconButton(
-            padding: EdgeInsets.only(right: 8.0),
+            padding: EdgeInsets.only(right: 32.0),
             onPressed: this.onPress,
             icon: Stack(children: <Widget>[
-              Opacity(opacity: animation.value, child: Icon(Icons.list)),
+              Opacity(
+                  opacity: animation.value,
+                  child: Icon(Icons.settings, size: 35.0)),
               FractionalTranslation(
                 translation: Tween<Offset>(
                   begin: Offset.zero,
                   end: Offset(1.0, 0.0),
                 ).evaluate(animation),
-                child: Icon(Icons.local_cafe),
+                child: IconGradient(icon: Icons.dashboard, size: 35.0),
               )
             ]),
           ),

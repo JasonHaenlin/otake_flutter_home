@@ -56,7 +56,7 @@ class UnitDetailCard extends StatelessWidget {
                 RaisedButton(
                   onPressed: () => print('START/STOP'),
                   child: Text('START/STOP'),
-                  color: Colors.indigo,
+                  // color: Colors.indigo,
                   textColor: Colors.white,
                 ),
               ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otake_flutter_home/theme/colors.dart';
+import 'package:otake_flutter_home/theme/colors.dart' as prefix0;
 
 class UnitMenu extends StatelessWidget {
   const UnitMenu({
@@ -8,7 +10,7 @@ class UnitMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan[600],
+      color: kColorAccent,
       child: Center(
         child: Column(
           children: <Widget>[

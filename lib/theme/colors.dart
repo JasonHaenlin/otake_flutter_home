@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
+const kColorPrimaryDark = const Color(0xFF0097A7);
+const kColorPrimaryLight = const Color(0xFFB2EBF2);
+const kColorPrimary = const Color(0xFF00BCD4);
+const kColorTextIcon = const Color(0xFFFFFFFF);
+const kColorDivider = const Color(0xFFBDBDBD);
+const kColorSecondary = const Color(0xFFC5032B);
+const kColorPrimaryText = const Color(0xFF212121);
+const kColorSecondaryText = const Color(0xFF757575);
+const kColorAccent = const Color(0xFFFF9800);
+
 List<Color> colors = [
-  Colors.deepPurple,
-  Colors.yellow,
-  Colors.deepOrange,
-  Colors.cyan,
-  Colors.lightGreen,
-  Colors.indigo,
-  Colors.green,
-  Colors.red,
-  Colors.blue,
-  Colors.amber,
-  Colors.purple,
-  Colors.lime,
-  Colors.teal,
-  Colors.orange,
-  Colors.lightBlue,
-  Colors.pink,
+  const Color(0xff4cffe1),
+  const Color(0xfff6ffa8),
+  const Color(0xff9d5ad9),
+  const Color(0xffff8c7f),
+  const Color(0xff9ad2cb),
 ];
 
 Color color(index) => colors[index % colors.length];
@@ -45,5 +44,7 @@ Color colorMonocromatic(index, color) {
       return Colors.grey[shade(index)];
   }
 }
+
+Color colorCriatic(index, color) {}
 
 num shade(index) => 100 * ((index % 4) + 2);

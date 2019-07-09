@@ -32,17 +32,15 @@ class ListViewUnits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OrientationBuilder(
-      builder: (context, orientation) {
-        return GridView.count(
-          crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-          children: List.generate(data.length, (index) {
-            return Container(
-              height: 100.0,
-              color: colorMonocromatic(index, 'cyan'),
-              child: UnitCard(data: data[index]),
-            );
-          }),
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 16,
+          ),
+          child: UnitCard(data: data[index]),
         );
       },
     );

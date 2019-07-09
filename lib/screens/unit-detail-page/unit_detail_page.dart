@@ -9,7 +9,7 @@ class UnitDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('${data.name} detail')),
+      appBar: AppBar(),
       body: UnitDetailBody(this.data),
     );
   }

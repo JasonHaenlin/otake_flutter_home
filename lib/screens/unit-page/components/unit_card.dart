@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/core/router.dart';
 import 'package:otake_flutter_home/models/unit_model.dart';
 import 'package:otake_flutter_home/screens/unit-detail-page/unit_detail_page.dart';
+import 'package:otake_flutter_home/theme/colors.dart';
 
 class UnitCard extends StatelessWidget {
   final Unit data;
@@ -12,36 +13,16 @@ class UnitCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => navigateToPage(context, UnitDetailPage(data)),
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return constraints.maxWidth > 150.0
-              ? Column(
-                  children: <Widget>[
-                    UnitInfo(data: data),
-                    UnitName(data: data),
-                    ZoomIcon()
-                  ],
-                )
-              : Container();
-        },
+      child: Material(
+        elevation: 8.0,
+        color: kColorPrimaryLight,
+        child: Column(
+          children: <Widget>[
+            UnitInfo(data: data),
+            UnitName(data: data),
+          ],
+        ),
       ),
-    );
-  }
-}
-
-class ZoomIcon extends StatelessWidget {
-  const ZoomIcon({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: <Widget>[
-        SizedBox(height: 32.0),
-        Icon(Icons.zoom_in, color: Colors.black26, size: 40.0),
-      ],
     );
   }
 }
@@ -56,8 +37,17 @@ class UnitName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Service ${data.name}',
-        style: Theme.of(context).textTheme.display2);
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+        color: kColorPrimary,
+        child: Text(
+          'Service ${data.name}',
+          style: Theme.of(context).textTheme.display2,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
   }
 }
 
