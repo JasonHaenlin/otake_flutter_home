@@ -3,7 +3,6 @@ import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/blocs/entry/entry_bloc.dart';
 import 'package:otake_flutter_home/models/unit_model.dart';
 import 'package:otake_flutter_home/screens/unit-page/components/unit_card.dart';
-import 'package:otake_flutter_home/theme/colors.dart';
 
 class UnitBody extends StatelessWidget {
   const UnitBody({Key key}) : super(key: key);

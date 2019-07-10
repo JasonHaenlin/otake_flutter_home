@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/models/unit_model.dart';
+import 'package:otake_flutter_home/theme/colors.dart';
 
 class UnitDetailCard extends StatelessWidget {
   const UnitDetailCard({
@@ -12,23 +13,12 @@ class UnitDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 225,
-      decoration: BoxDecoration(color: Colors.cyan[200]),
+      height: 150,
+      decoration: BoxDecoration(color: kColorSecondary),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Image.network(data.logo),
-                SizedBox(width: 30),
-                Text(
-                  'Service ${data.name}',
-                  style: Theme.of(context).textTheme.headline,
-                ),
-              ],
-            ),
-            SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(

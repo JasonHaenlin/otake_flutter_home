@@ -8,7 +8,7 @@ class UnitDetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: <Widget>[
         UnitDetailCard(data: data),
         SizedBox(height: 20),

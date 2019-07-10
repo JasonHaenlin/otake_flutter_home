@@ -24,14 +24,14 @@ abstract class BlocBase<Event, Type> {
     _currentValue$.close();
   }
 
-  void dispatch(Event event) async {
+  void dispatch(Event event, [dynamic data]) async {
     _currentEvent = event;
-    dynamic stream = eventToState(event);
+    dynamic stream = eventToState(event, data);
     await for (dynamic value in stream) {
       _currentValue$.add(value);
       _currentValue = value;
     }
   }
 
-  Stream<Type> eventToState(Event event);
+  Stream<Type> eventToState(Event event, [dynamic data]);
 }

@@ -8,11 +8,10 @@ class EntryState extends BlocBase<EntryEvent, List<Unit>> {
   EntryState(List<Unit> seed) : super(seed: seed, initEvent: EntryEvent.fetch);
 
   @override
-  Stream<List<Unit>> eventToState(EntryEvent event) async* {
+  Stream<List<Unit>> eventToState(EntryEvent event, [dynamic data]) async* {
     switch (event) {
       case EntryEvent.fetch:
-        List<Unit> entries = await unitService.getEntries();
-        yield entries;
+        yield await unitService.getEntries();
         break;
       default:
     }

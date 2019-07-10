@@ -4,7 +4,7 @@ import 'package:otake_flutter_home/models/base_model.dart';
 const _kstatusToIcon = {
   'ok': {'value': Icons.check_circle_outline, 'color': Colors.green},
   'error': {'value': Icons.highlight_off, 'color': Colors.red},
-  'warning': {'value': Icons.warning, 'color': Colors.orangeAccent},
+  'warning': {'value': Icons.warning, 'color': Colors.deepOrangeAccent},
 };
 
 class Unit extends BaseModel {

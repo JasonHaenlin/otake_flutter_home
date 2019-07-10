@@ -40,7 +40,7 @@ class UnitName extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        color: kColorPrimary,
+        color: kColorSecondary,
         child: Text(
           'Service ${data.name}',
           style: Theme.of(context).textTheme.display2,

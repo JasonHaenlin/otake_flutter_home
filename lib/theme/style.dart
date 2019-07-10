@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:otake_flutter_home/theme/colors.dart';
-import 'package:otake_flutter_home/theme/colors.dart' as prefix0;
 
 ThemeData appTheme() {
   return ThemeData(

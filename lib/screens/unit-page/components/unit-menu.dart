@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:otake_flutter_home/blocs/auth/auth_bloc.dart';
+import 'package:otake_flutter_home/blocs/auth/auth_state.dart';
+import 'package:otake_flutter_home/blocs/bloc_provider.dart';
 import 'package:otake_flutter_home/theme/colors.dart';
-import 'package:otake_flutter_home/theme/colors.dart' as prefix0;
 
 class UnitMenu extends StatelessWidget {
   const UnitMenu({
@@ -9,6 +11,8 @@ class UnitMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authbloc = BlocProvider.of<AuthBloc>(context).authBloc;
+
     return Container(
       color: kColorAccent,
       child: Center(
@@ -28,10 +32,13 @@ class UnitMenu extends StatelessWidget {
               child:
                   Text('menu 2', style: Theme.of(context).textTheme.display2),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child:
-                  Text('menu 3', style: Theme.of(context).textTheme.display2),
+            InkWell(
+              onTap: () => authbloc.dispatch(AuthEvent.logout),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child:
+                    Text('LOGOUT', style: Theme.of(context).textTheme.display2),
+              ),
             ),
           ],
         ),
