@@ -3,7 +3,9 @@ class AuthService {
 
   Future<bool> login({username, password}) async {
     await Future.delayed(const Duration(seconds: 1));
-    authenticated = (username == 'admin' && password == 'admin');
+    // authenticated = (username == 'admin' && password == 'admin');
+    authenticated = true;
+    print('authenticated : ' + authenticated.toString());
     return authenticated;
   }
 

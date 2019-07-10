@@ -4,10 +4,10 @@ import 'package:otake_flutter_home/services/auth_service.dart';
 enum AuthEvent { login, logout, authenticated }
 
 class AuthState extends BlocBase<AuthEvent, bool> {
-  AuthState() : super(seed: false, initEvent: AuthEvent.logout);
+  AuthState() : super(seed: false, initEvent: AuthEvent.authenticated);
 
   @override
-  Stream<bool> eventToState(AuthEvent event, [dynamic data]) async* {
+  Stream<bool> eventToState(AuthEvent event, [data]) async* {
     switch (event) {
       case AuthEvent.login:
         yield await authService.login(

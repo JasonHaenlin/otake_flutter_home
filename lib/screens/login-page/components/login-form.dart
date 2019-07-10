@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:otake_flutter_home/blocs/auth/auth_bloc.dart';
 import 'package:otake_flutter_home/blocs/auth/auth_state.dart';
 import 'package:otake_flutter_home/blocs/bloc_provider.dart';
+import 'package:otake_flutter_home/blocs/loading/loading_bloc.dart';
+import 'package:otake_flutter_home/blocs/loading/loading_state.dart';
 import 'package:otake_flutter_home/components/IconGradient.dart';
-import 'package:otake_flutter_home/core/router.dart';
-import 'package:otake_flutter_home/screens/unit-page/unit_page.dart';
+import 'package:otake_flutter_home/components/progress_indicator_ctrl.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -20,7 +21,8 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authBloc = BlocProvider.of<AuthBloc>(context).authBloc;
+    final _authBloc = BlocProvider.of<AuthBloc>(context).authBloc;
+    final _loadingBloc = BlocProvider.of<LoadingBloc>(context).loadingBloc;
 
     return SafeArea(
       child: Padding(
@@ -59,20 +61,23 @@ class LoginForm extends StatelessWidget {
                   ),
                   SizedBox(width: 10.0),
                   RaisedButton(
-                    elevation: 8.0,
-                    color: Colors.cyan,
-                    child: Text(
-                      'NEXT',
-                      style: Theme.of(context).appBarTheme.textTheme.subtitle,
-                    ),
-                    onPressed: () => authBloc.dispatch(AuthEvent.login, {
+                      elevation: 8.0,
+                      color: Colors.cyan,
+                      child: Text(
+                        'NEXT',
+                        style: Theme.of(context).appBarTheme.textTheme.subtitle,
+                      ),
+                      onPressed: () {
+                        _authBloc.dispatch(AuthEvent.login, {
                           'username': _usernameController.text,
                           'password': _passwordController.text
-                        }),
-                  )
+                        });
+                        _loadingBloc.dispatch(LoadingEvent.progress);
+                      })
                 ],
               ),
-            )
+            ),
+            ProgressIndicatorCtrl()
           ],
         ),
       ),
