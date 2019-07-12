@@ -35,10 +35,11 @@ class UnitMenu extends StatelessWidget {
                   children: <Widget>[
                     Icon(
                       Icons.lock_outline,
-                      color: Colors.black,
+                      color: Colors.white,
                       size: 30.0,
                     ),
-                    Text('Logout', style: Theme.of(context).textTheme.display2),
+                    Text('Logout',
+                        style: Theme.of(context).appBarTheme.textTheme.title),
                   ],
                 ),
               ),
