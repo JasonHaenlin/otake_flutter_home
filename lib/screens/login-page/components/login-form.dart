@@ -51,32 +51,21 @@ class LoginForm extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Password'),
             ),
             Padding(
-              padding: const EdgeInsets.all(19.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  FlatButton(
-                    child: Text('CANCEL'),
-                    onPressed: () => print('CANCEL'),
-                  ),
-                  SizedBox(width: 10.0),
-                  RaisedButton(
-                      elevation: 8.0,
-                      color: Colors.cyan,
-                      child: Text(
-                        'NEXT',
-                        style: Theme.of(context).appBarTheme.textTheme.subtitle,
-                      ),
-                      onPressed: () {
-                        _authBloc.dispatch(AuthEvent.login, {
-                          'username': _usernameController.text,
-                          'password': _passwordController.text
-                        });
-                        _loadingBloc.dispatch(LoadingEvent.progress);
-                      })
-                ],
-              ),
-            ),
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: RaisedButton(
+                    elevation: 8.0,
+                    color: Colors.cyan,
+                    child: Text(
+                      'NEXT',
+                      style: Theme.of(context).appBarTheme.textTheme.subtitle,
+                    ),
+                    onPressed: () {
+                      _authBloc.dispatch(AuthEvent.login, {
+                        'username': _usernameController.text,
+                        'password': _passwordController.text
+                      });
+                      _loadingBloc.dispatch(LoadingEvent.progress);
+                    })),
             ProgressIndicatorCtrl()
           ],
         ),

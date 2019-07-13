@@ -18,7 +18,7 @@ class ProgressIndicatorCtrl extends StatelessWidget {
               ? Center(
                   child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
-                        this.color != null ? this.color : kColorAccent),
+                        this.color ?? kColorAccent),
                   ),
                 )
               : Container(),

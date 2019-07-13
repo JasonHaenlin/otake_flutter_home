@@ -27,7 +27,7 @@ class AuthService {
   Future<bool> isAuthenticated() async {
     final username = await readStorage(key: _kKeyUsername);
     final password = await readStorage(key: _kKeyPassword);
-    if (username != null && password != null) {
+    if (username != '' && password != '') {
       authenticated = true;
     } else {
       authenticated = false;

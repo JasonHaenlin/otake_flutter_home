@@ -21,7 +21,6 @@ class IconGradient extends StatelessWidget {
             tileMode: TileMode.mirror,
           ).createShader(bounds);
         },
-        child: Icon(this.icon != null ? this.icon : Icons.dashboard,
-            size: this.size != null ? this.size : 50.0));
+        child: Icon(this.icon ?? Icons.dashboard, size: this.size ?? 50.0));
   }
 }
